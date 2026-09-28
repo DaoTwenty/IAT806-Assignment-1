@@ -26,6 +26,9 @@ let rect_obstacles = [
   [73, 26, 456, 144]
 ]
 
+// moving paw
+let moving_paw;
+
 async function setup() {
   bg = await loadImage('assets/background.png');
   pianoSound = new PianoSynthesis();
@@ -33,10 +36,13 @@ async function setup() {
   midi = await new Score("assets/Maple-Leaf-Rag.mid", pianoSound);
   createCanvas(600, 400);
   angleMode(DEGREES);
+  moving_paw = new MovingPaw(-100, 50, -30, 50, 1);
 }
 
 function draw() {
   background(bg);
+
+  moving_paw.loop();
 
   piano_triggers = [];
   piano(100 , 100, 500, 100, 60, 6, 30, piano_triggers);
