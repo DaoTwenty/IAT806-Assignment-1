@@ -1,3 +1,7 @@
+# The Ole Rag'n'Cat Pub
+
+## Instructions 
+
 This is a fun mini-game that takes place in a rustic pub. 
 
 Feel free to play with the piano yourself by pressing the keys. 
