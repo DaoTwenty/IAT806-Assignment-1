@@ -135,31 +135,35 @@ class Ant {
   }
 
   ant() {
+    push();
+    translate(this.x, this.y);
+    rotate(90+this.dir);
     //body
     fill("#000000");
     stroke("#000000");
-    //rotate(this.dir);
-    ellipse(this.x, this.y, 5, 7);
-    ellipse(this.x, this.y + 8, 7, 10);
-    circle(this.x, this.y - 7, 8);
+    ellipse(0, 0, 5, 7);
+    ellipse(0, 8, 7, 10);
+    circle(0, -7, 8);
 
     // right legs
-    line(this.x+2, this.y, this.x+6, this.y - 3);
-    line(this.x + 6, this.y - 3, this.x+10, this.y - 10);
-    line(this.x+2, this.y, this.x+10, this.y);
-    line(this.x+2, this.y, this.x+6, this.y + 3);
-    line(this.x + 6, this.y + 3, this.x+10, this.y + 10);
+    line(2, 0, 6, -3);
+    line(6, -3, 10, -10);
+    line(2, 0, 10, 0);
+    line(2, 0, 6, 3);
+    line(6, 3, 10, 10);
 
     // left legs
-    line(this.x-2, this.y, this.x-6, this.y - 3);
-    line(this.x - 6, this.y - 3, this.x-10, this.y - 10);
-    line(this.x-2, this.y, this.x-10, this.y);
-    line(this.x-2, this.y, this.x-6, this.y + 3);
-    line(this.x - 6, this.y + 3, this.x-10, this.y + 10);
+    line(-2, 0, -6, -3);
+    line(-6, -3, -10, 0 - 10);
+    line(-2, 0, -10, 0);
+    line(-2, 0, -6, 3);
+    line(-6, 3, -10, 10);
 
     //antenna
-    line(this.x + 1, this.y - 6, this.x + 8, this.y - 16);
-    line(this.x - 1, this.y - 6, this.x - 8, this.y - 16);
+    line(1, -6, 8, -16);
+    line(-1, -6, -8, -16);
+
+    pop();
   }
   
   mousePressed(event) {

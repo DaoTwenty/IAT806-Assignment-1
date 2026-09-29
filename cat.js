@@ -73,4 +73,11 @@ class MovingPaw {
         this.y_pos = this.y_s + (this.y_e - this.y_s) * sin(frameCount * this.omega);
         this.paw.loop(this.x_pos, this.y_pos);
     }
+
+    is_clicked() {
+        if (mouseX > this.x_pos && mouseX <= this.x_pos + 95 && mouseY > this.y_pos - 5 && mouseY <= this.y_pos + 25) {
+            return true;
+        }
+        return false;
+    }
 }
